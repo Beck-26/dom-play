@@ -10,8 +10,12 @@ html {
 }
 
 ::selection {
-    color: #000; 
+    color: #000;
     background: #ff0;
+}
+
+body {
+    margin: 0;
 }
 
 h1 {
@@ -24,20 +28,22 @@ h1 {
 main.wrapper {
     background-color: white;
     overflow: auto;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);
 }
 
 p {
-    margin: 1em; /* Top Right Bottom Left (TRBL) */
+    margin: 1em;
 }
 
-h2,h3 {
+h2,
+h3 {
     font-weight: normal;
     margin-left: 1em;
-    line-height: 1em;
+    line-height: 1.2em;
 }
 
 a {
-    color:darkcyan;
+    color: darkcyan;
     text-decoration: none;
 }
 
@@ -45,6 +51,79 @@ a:hover {
     color: whitesmoke;
     background-color: darkcyan;
     text-decoration: none;
+}
+
+.intro,
+.explanation {
+    padding: 1em;
+}
+
+.play-box {
+    margin: 1em;
+    padding: 1.5em;
+    background-color: #f8fbfb;
+    border: 2px solid darkcyan;
+    border-radius: 12px;
+}
+
+.play-box h2 {
+    margin-left: 0;
+    color: #006f73;
+}
+
+.stage-direction {
+    margin-left: 0;
+    font-style: italic;
+    color: #555;
+}
+
+.actor-buttons {
+    margin: 1em 0;
+    display: flex;
+    gap: 0.75em;
+    flex-wrap: wrap;
+}
+
+.actor-buttons button {
+    padding: 0.75em 1.25em;
+    border: none;
+    border-radius: 8px;
+    background-color: darkcyan;
+    color: white;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.actor-buttons button:hover,
+.actor-buttons button.active-actor {
+    background-color: #004d4f;
+}
+
+.script {
+    padding: 1em;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.line {
+    padding: 0.75em;
+    border-left: 5px solid transparent;
+    transition: 0.3s ease;
+}
+
+.highlight {
+    background-color: #fff3a3;
+    border-left: 5px solid darkcyan;
+    font-weight: bold;
+    transform: scale(1.01);
+}
+
+code {
+    background-color: #eeeeee;
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
 }
 
 footer {
@@ -56,58 +135,48 @@ footer {
 /* Responsive rules */
 
 /* DESKTOP */
-@media all and (min-width:1200px) {
+@media all and (min-width: 1200px) {
     main.wrapper {
         width: 80%;
         margin: auto;
     }
-    
+
     h1 {
         width: 79%;
         padding-left: 1%;
     }
-    
-    picture.profile img {
-        width: 50%;
-        float: left;
-        margin-right: 2em;
-    }
-    
 }
 
 /* TABLET */
-@media all and (min-width:501px) and (max-width:1199px) {
+@media all and (min-width: 501px) and (max-width: 1199px) {
     main.wrapper {
         width: 90%;
         margin: auto;
     }
-    
+
     h1 {
         width: 89%;
         padding-left: 1%;
     }
-    
-    picture.profile img {
-        width: 50%;
-        float: right;
-        margin-left: 1em;
-    }
-
 }
 
 /* PHONE */
-@media all and (max-width:500px) {
+@media all and (max-width: 500px) {
     main.wrapper {
         width: 100%;
     }
-    
+
     h1 {
         width: 99%;
         padding-left: 1%;
+        font-size: 1.7em;
     }
-    
-    picture.profile img {
+
+    .actor-buttons {
+        flex-direction: column;
+    }
+
+    .actor-buttons button {
         width: 100%;
     }
-    
 }

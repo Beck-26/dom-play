@@ -1,33 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-     <title>Title Goes Here</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/nav.css" />
- </head>
- <body>
-     <header>
-     <h1>Title Goes Here</h1>
+<head>
+    <title>DOM Play by Beckham Kunda</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body>
+    <header>
+        <h1>DOM Play by Beckham Kunda</h1>
+
         <nav class="topnav" id="myTopnav">
             <a href="index.html" class="active">Home</a>
-            <a href="#" target="_blank">Name of project goes here</a>
+            <a href="#play">DOM Play Project</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </nav>
-     </header>
-     
-   <main class="wrapper">
-    <p>Content goes here</p>
-     <footer>
-      <p><small>&copy; 2026 by 
-          YOUR NAME HERE, All Rights Reserved ~ 
-          <a id="html-checker" href="#">Check HTML</a> ~ 
-          <a id="css-checker" href="#">Check CSS</a></small>
-     </p>
-    </footer>
-  </main>
-  <script src="js/main.js"></script>
-  <script src="js/dom-play.js"></script>
- </body>
+    </header>
+
+    <main class="wrapper">
+        <section class="intro">
+            <h2>Actor Line Highlighter</h2>
+            <p>
+                This page was created by <strong>Beckham Kunda</strong>. The goal of this project is to help actors
+                rehearse by clicking a character name and instantly highlighting that actor's lines.
+            </p>
+            <p>
+                The page uses HTML data attributes, CSS classes, and JavaScript DOM events. When an actor button is
+                clicked, JavaScript removes the highlight from all other lines and adds the highlight only to the
+                selected actor's lines without reloading the page.
+            </p>
+        </section>
+
+        <section id="play" class="play-box">
+            <h2>The Lost Tablet</h2>
+            <p class="stage-direction">
+                A short original scene written for this DOM assignment.
+            </p>
+
+            <div class="actor-buttons">
+                <button type="button" data-actor="maya">Maya</button>
+                <button type="button" data-actor="leo">Leo</button>
+                <button type="button" data-actor="nora">Nora</button>
+            </div>
+
+            <article class="script">
+                <p class="line" data-actor="maya">
+                    <strong>Maya:</strong> The director said the rehearsal notes were saved on this tablet.
+                </p>
+
+                <p class="line" data-actor="leo">
+                    <strong>Leo:</strong> Then we need to find it before everyone comes back from break.
+                </p>
+
+                <p class="line" data-actor="nora">
+                    <strong>Nora:</strong> I saw it on the front table right before the lights went out.
+                </p>
+
+                <p class="line" data-actor="maya">
+                    <strong>Maya:</strong> Wait, if the lights went out, someone must have moved it by mistake.
+                </p>
+
+                <p class="line" data-actor="leo">
+                    <strong>Leo:</strong> Or someone wanted us to rehearse from memory.
+                </p>
+
+                <p class="line" data-actor="nora">
+                    <strong>Nora:</strong> That would be dramatic, but not very helpful.
+                </p>
+
+                <p class="line" data-actor="maya">
+                    <strong>Maya:</strong> Look under the script binder. It has to be nearby.
+                </p>
+
+                <p class="line" data-actor="leo">
+                    <strong>Leo:</strong> Found it! It was hiding under the costume notes.
+                </p>
+
+                <p class="line" data-actor="nora">
+                    <strong>Nora:</strong> Great. Now click our names and let the rehearsal begin.
+                </p>
+            </article>
+        </section>
+
+        <section class="explanation">
+            <h2>How the JavaScript Works</h2>
+            <p>
+                Each actor button has a <code>data-actor</code> attribute. Each line in the script also has a matching
+                <code>data-actor</code> attribute. JavaScript reads the actor name from the button that was clicked,
+                loops through all script lines, removes the highlight class from every line, and then adds the highlight
+                class only to the lines that match the selected actor.
+            </p>
+        </section>
+
+        <footer>
+            <p>
+                <small>
+                    &copy; 2026 by Beckham Kunda, All Rights Reserved ~
+                    <a id="html-checker" href="#">Check HTML</a> ~
+                    <a id="css-checker" href="#">Check CSS</a>
+                </small>
+            </p>
+        </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/dom-play.js"></script>
+</body>
 </html>
